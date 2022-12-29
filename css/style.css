@@ -75,6 +75,8 @@ textarea{
 }
 
 #contenedorPadre{
+    display: block;
+    align-items: center;
     background: rgba( 255, 255, 255, 0.60 );
     box-shadow: 0 8px 16px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 6px );
@@ -107,6 +109,17 @@ footer svg{
 footer svg:hover{
     color: rgb(108, 231, 59);
 }
+
+.msjadv{
+        text-align: center;
+}
+
+.textoEnDes{
+    font-size: 18px;
+    font-weight: 400;
+    text-align: justify;
+}
+
 
 /*estilos para vista movil*/
 @media (max-width: 575px){
