@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+/* Estilo general para elementos*/
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+a, h1{
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.textoIntro{
+    font-weight: 300;
+    font-size: 18px;
+    text-align: justify;
+}
+
+textarea{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 16px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#notaSpan{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#nota{
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.btn{
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba( 31, 38, 135, 0.37 );
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btn:hover{
+    border: solid black 2px;
+}
+
+#btnEn{
+    background-color: rgb(108, 231, 59);
+}
+
+#btnDes{
+    background-color: aliceblue;
+}
+
+#contenedorPadre{
+    background: rgba( 255, 255, 255, 0.60 );
+    box-shadow: 0 8px 16px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.footerTxt{
+    color: azure;
+    font-weight: 300;
+}
+hr{
+    border: solid 2px azure;
+}
+footer a{
+    color: azure;
+}
+footer a:hover{
+    color: rgb(108, 231, 59);
+}
+footer svg{
+    margin: 0px 5px;
+    border-color: azure;
+    color: azure;
+
+}
+footer svg:hover{
+    color: rgb(108, 231, 59);
+}
+
+/*estilos para vista movil*/
+@media (max-width: 575px){
+    header{
+        display: flex;
+        justify-content: center;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 15px 35px 15px;
+    }
+    hr{
+        margin: 0px 15px;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+    }
+    #inputTexto{
+        margin: 0;
+    }
+    textarea{
+        margin-top: 10px;
+        width: 90%;
+        height: 100%;
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    #notaSpan{
+        margin: 10px 0px;
+        justify-content: center;
+
+    }
+    #btns{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn{
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    #outputTexto{
+        margin: 0px;
+    }
+
+    #contenedorPadre{
+        margin-top: 20px;
+        height: 100%;
+    }
+
+    #redes{
+        align-items: center;
+        text-align: center;
+    }
+    #creditos{
+        align-items: center;
+        text-align: center;
+    }
+}
+@media (min-width: 576px){
+    header{
+        display: flex;
+        justify-content: center;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 30px 35px 30px;
+    }
+    hr{
+        margin: 0px 30px;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+    }
+    #inputTexto{
+        margin: 0;
+    }
+    textarea{
+        margin-top: 10px;
+        width: 90%;
+        height: 100%;
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    #notaSpan{
+        margin: 10px 0px;
+        justify-content: center;
+
+    }
+    #btns{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn{
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    #outputTexto{
+        margin: 0px;
+    }
+
+    #contenedorPadre{
+        margin-top: 20px;
+        height: 100%;
+    }
+
+    #redes{
+        align-items: center;
+        text-align: center;
+    }
+    #creditos{
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/*estilo para vista tablet-vertical*/
+@media (min-width: 768px){
+    header{
+        display: flex;
+        justify-content: center;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 75px 35px 75px;
+    }
+    hr{
+        margin: 0px 75px;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 75px;
+    }
+    #inputTexto{
+        margin: 0;
+    }
+    textarea{
+        margin-top: 10px;
+        width: 93%;
+        height: 100%;
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    #notaSpan{
+        margin: 10px 0px;
+        justify-content: center;
+
+    }
+    #btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .btn{
+        width: 45%;
+        font-size: 18px;
+    }
+
+    #outputTexto{
+        margin: 0px;
+    }
+
+    #contenedorPadre{
+        margin-top: 20px;
+        height: 100%;
+    }
+
+    #redes{
+        align-items: center;
+        text-align: center;
+    }
+    #creditos{
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/*estilo para vistas tablet/desktop horizontal*/
+@media (min-width: 992px){
+    header{
+        display: flex;
+        justify-content: left;
+        margin: 0px 100px;
+    }
+    main{
+        margin: 0px 100px 35px 100px;
+    }
+    
+    hr{
+        margin: 0px 100px;
+    }
+
+    #programa{
+        display: flex;
+        justify-content: space-between;
+
+    }
+    #inputTexto{
+        width: 55%;
+        margin: 0;
+    }
+    #outputTexto{
+        width: 35%;
+        height: 100%;
+        margin-top: 10px
+    }
+
+    textarea{
+        margin-top: 10px;
+        width: 90%;
+        height: 100%;
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    #notaSpan{
+        margin: 10px 0px;
+        justify-content: left;
+
+    }
+    #btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .btn{
+        width: 45%;
+        font-size: 18px;
+    }
+
+
+    #contenedorPadre{
+        height: 100%;
+        margin: 0;
+    }
+
+    footer{
+        margin-left: 100px;
+        margin-right: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    #redes{
+        width: 45%;
+        align-items: center;
+        text-align: center;
+    }
+    #creditos{
+        width: 45%;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/*estilo para vista desktop*/
+@media (min-width: 1200px){
+    header{
+        display: flex;
+        justify-content: left;
+        margin: 0px 200px;
+    }
+    main{
+        margin: 0px 200px 35px 200px;
+    }
+    
+    hr{
+        margin: 90px 200px 0px 200px;
+    }
+
+    #programa{
+        display: flex;
+        justify-content: space-between;
+
+    }
+    #inputTexto{
+        width: 60%;
+        margin: 0;
+    }
+    #outputTexto{
+        width: 30%;
+        height: 100%;
+        margin-top: 10px
+    }
+
+    textarea{
+        margin-top: 10px;
+        width: 95%;
+        height: 100%;
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    #notaSpan{
+        margin: 10px 0px;
+        justify-content: left;
+
+    }
+    #btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .btn{
+        width: 45%;
+        font-size: 18px;
+    }
+
+
+    #contenedorPadre{
+        height: 100%;
+        margin: 0;
+    }
+
+    footer{
+        margin-left: 200px;
+        margin-right: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    #redes{
+        width: 45%;
+        align-items: center;
+        text-align: center;
+    }
+    #creditos{
+        width: 45%;
+        align-items: center;
+        text-align: center;
+    }
+}
