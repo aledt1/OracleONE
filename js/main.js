@@ -25,7 +25,7 @@ var btnCopiar = document.createElement("button");
 window.addEventListener("load", function(e){
     e.preventDefault();
     contenedor.append(imagen);
-    imagen.src ="/src/incog.png";
+    imagen.src ="../src/incog.png";
     imagen.style.width = "100%";
     imagen.className += "imagen";
 
