@@ -1,104 +1,129 @@
+//instancias de html
+var ycbe2 = document.getElementById("areaTexto");
 var btnEncriptar = document.getElementById("btnEn");
 var btnDesencriptar = document.getElementById("btnDes");
-var ycbe2 = document.getElementById("areaTexto").value;
 var contenedor = document.querySelector("#contenedorPadre");
+var form = document.getElementById("form");
+
 //valiables para el DOM
-let imagen = document.createElement("img");
-let adv = document.createElement("h3");
-let msjInicial = document.createElement("p");
-
-let msjTrans = document.createElement("p");
+var imagen = document.createElement("img");
+var adv = document.createElement("h2");
+var msjTrans = document.createElement("p");
     msjTrans.className += "textoEnDes";
+    msjTrans.setAttribute("id","textoACopiar");
 
-let btnCopiar = document.createElement("button");
+var msjInicial = document.createElement("p");
+    msjInicial.className += "textoEnDes";    
+    
+var btnCopiar = document.createElement("button");
     btnCopiar.type ="button";
     btnCopiar.innerText = "Copiar texto";
     btnCopiar.className += "btn";
     btnCopiar.setAttribute("id","btnCopiar");
-
 
 //Evento para la carga inicial de la página
 window.addEventListener("load", function(e){
     e.preventDefault();
     contenedor.append(imagen);
     imagen.src ="/src/incog.png";
-    imagen.style.width = "100%"
-    imagen.className += "imagen",
+    imagen.style.width = "100%";
+    imagen.className += "imagen";
 
     contenedor.append(adv);
     adv.className += "msjadv";
     adv.innerHTML = "Ningún mensaje fue encontrado";
 
     contenedor.append(msjInicial);
-    msjInicial.className += "textoEnDes";
     msjInicial.innerHTML = "Ingrese el texto que desee encriptar o desencriptar Agente.";
     
-    console.log("Si jala el evento carga");
+    //console.log("Cargó el evento inicial /load/");
 });
 
-//evento para el boton encriptar
-var encriptador = {
-    a:"ai",
-    e:"enter",
-    i:"imes",
-    o:"ober",
-    u:"ufat"
-};
-
-var prueba1 = ycbe2.replace(/a|e|i|o|u/gi, function(cambio){
-    return encriptador[cambio];
-});
-
+//Evento para el boton encriptar
 btnEncriptar.addEventListener("click", function(e){
     e.preventDefault();
-    // Ocultamos los elementos del evento carga
-    imagen.style.display = "none";
-    adv.style.display = "none";
-    msjInicial.style.display = "none";
+    // objeto con las keys a cambiar
+    let encriptador = {
+        a:"ai",
+        e:"enter",
+        i:"imes",
+        o:"ober",
+        u:"ufat"
+    };
 
-    contenedor.append(msjTrans);
+    //Caso 1: Texto ingresado
+    if ((ycbe2.value.length > 4) && (ycbe2.value[0] != " ")){ 
+        imagen.style.display = "none";
+        adv.style.display = "none";
+        msjInicial.style.display = "none";
+        contenedor.append(msjTrans);
 
-    let textoEncriptado = ycbe2.replace(/a|e|i|o|u/gi, function(cambio){
-        return encriptador[cambio];
-    });
-    msjTrans.innerHTML = textoEncriptado;
+        //Caso 1.1: Texto ingresado cumple con las condiciones
+        for (let i = 0; i < ycbe2.value.length; i++){
+            if (((ycbe2.value.charCodeAt(i) > 96) && (ycbe2.value.charCodeAt(i) < 123)) || (ycbe2.value.charCodeAt(i) == 32)){
+                let textoEncriptado = ycbe2.value.replace(/a|e|i|o|u/gi, function(cambio){ //funcion encriptador
+                    return encriptador[cambio]});
+                msjTrans.innerHTML = textoEncriptado;
+                msjTrans.style.fontSize = "26px";
+                msjTrans.style.textAlign = "center";
+                contenedor.append(btnCopiar);
+                btnCopiar.style.width = "100%";
 
-    contenedor.append(btnCopiar);
+            } else{ //caso 1.2: Texto ingresado no cumple condiciones
+                btnCopiar.style.display = "none";
+                alert("El programa Y.C.B.E.2 solo admite texto en minúsculas, sin acentos ni números. Vuelva a cargar el texto Agente.");
+                location.reload();
+                break;
+            }
+        } 
+    } else{ //Caso 2: Texto no ingresado
+        alert("Favor de agregar un texto Agente");
+        form.reset();
+        location.reload();
+    }
+    //console.log("Se ejecutó el evento Encriptar");
 });
 
-//evento para desencriptar un texto
-var desencriptador = {
-    ai:"a",
-    enter:"e",
-    imes:"i",
-    ober:"o",
-    ufat:"u"
-};
-
+//Evento para desencriptar un texto
 btnDesencriptar.addEventListener("click", function(f){
     f.preventDefault();
-    imagen.style.display = "none";
-    adv.style.display = "none";
-    msjInicial.style.display = "none";
+    // objeto con las keys a cambiar
+    let desencriptador = {
+        ai:"a",
+        enter:"e",
+        imes:"i",
+        ober:"o",
+        ufat:"u"
+    };
+    //Caso 1: Texto ingresado
+    if ((ycbe2.value.length > 4) && (ycbe2.value[0] != " ")){ 
+        imagen.style.display = "none";
+        adv.style.display = "none";
+        msjInicial.style.display = "none";
+        contenedor.append(msjTrans);
 
-    contenedor.append(msjTrans);
+        let textoDesencriptado = ycbe2.value.replace(/ai|enter|imes|ober|ufat/gi, function(cambio){ //funcion desencriptar
+            return desencriptador[cambio]});
+        msjTrans.innerHTML = textoDesencriptado;
+        msjTrans.style.fontSize = "32px";
+        msjTrans.style.textAlign = "center";
+        contenedor.append(btnCopiar);
+        btnCopiar.style.width = "100%";
 
-    let textoDesencriptado = ycbe2.replace(/ai|enter|imes|ober|ufat/gi, function(cambio){
-        return encriptador[cambio];
-    });
-    msjTrans.innerHTML = textoDesencriptado;
-
-    contenedor.append(btnCopiar);
-
+    } else{ //Caso 2: Texto no ingresado
+        alert("Favor de agregar un texto Agente");
+        form.reset();
+        location.reload();
+    }
+    //console.log("Se ejecutó el evento Desencriptar");
 });
 
-
-//evento copiar
+//Evento copiar texto transformado
 btnCopiar.addEventListener("click", function(g){
     g.preventDefault();
-
-})
-
-
-
-
+    let copia = document.getElementById("textoACopiar");
+    navigator.clipboard.writeText(copia.innerHTML); //metodo copiar
+    //console.log("Si se copio el texto");
+    location.reload();
+    form.reset();
+});
