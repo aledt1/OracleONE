@@ -122,7 +122,8 @@ btnDesencriptar.addEventListener("click", function(f){
 btnCopiar.addEventListener("click", function(g){
     g.preventDefault();
     let copia = document.getElementById("textoACopiar");
-    navigator.clipboard.writeText(copia.innerHTML); //metodo copiar
+    console.log(copia.v);
+    navigator.clipboard.writeText(copia.innerText); //metodo copiar
     //console.log("Si se copio el texto");
     location.reload();
     form.reset();
