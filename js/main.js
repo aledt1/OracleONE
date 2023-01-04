@@ -121,14 +121,8 @@ btnDesencriptar.addEventListener("click", function(f){
 //Evento copiar texto transformado
 btnCopiar.addEventListener("click", function(g){
     g.preventDefault();
-    
     let copia = document.getElementById("textoACopiar");
     navigator.clipboard.writeText(copia.textContent); //metodo copiar
-    //console.log("Si se copio el texto");
-    //console.log(copia.innerHTML);
-    //console.log(copia.innerText);
-    //console.log(copia.textContent);
-    //console.log(copia.value);
     form.reset();
-    setTimeout(() =>{location.reload();}, 1500);
+    setTimeout(() =>{location.reload();}, 100);
 });

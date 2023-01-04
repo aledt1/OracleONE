@@ -60,18 +60,28 @@ textarea{
     border-radius: 10px;
     box-shadow: 0 8px 16px 0 rgba( 31, 38, 135, 0.37 );
     font-family: 'Ubuntu', sans-serif;
+    -webkit-padding: 15px;
+    -webkit-border: none;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 0 8px 16px 0 rgba( 31, 38, 135, 0.37 );
+    -webkit-font-family: 'Ubuntu', sans-serif;
+
 }
 
 .btn:hover{
     border: solid black 2px;
+    -webkit-border: solid black 2px;
+
 }
 
 #btnEn{
     background-color: rgb(108, 231, 59);
+    -webkit-background-color: rgb(108, 231, 59);
 }
 
 #btnDes{
     background-color: aliceblue;
+    -webkit-background-color: aliceblue;
 }
 
 #contenedorPadre{
@@ -159,11 +169,16 @@ footer svg:hover{
     #btns{
         display: flex;
         flex-direction: column;
+        -webkit-display: flex;
+        -webkit-flex-direction: column;
     }
     .btn{
         width: 100%;
         margin-bottom: 10px;
         font-size: 18px;
+        -webkit-width: 100%;
+        -webkit-margin-bottom: 10px;
+        -webkit-font-size: 18px;
     }
 
     #outputTexto{
@@ -221,11 +236,16 @@ footer svg:hover{
     #btns{
         display: flex;
         flex-direction: column;
+        -webkit-display: flex;
+        -webkit-flex-direction: column;
     }
     .btn{
         width: 100%;
         margin-bottom: 10px;
         font-size: 18px;
+        -webkit-width: 100%;
+        -webkit-margin-bottom: 10px;
+        -webkit-font-size: 18px;
     }
 
     #outputTexto{
@@ -286,10 +306,15 @@ footer svg:hover{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        -webkit-display: flex;
+        -webkit-flex-direction: row;
+        -webkit-justify-content: space-between;
     }
     .btn{
         width: 45%;
         font-size: 18px;
+        -webkit-width: 45%;
+        -webkit-font-size: 18px;
     }
 
     #outputTexto{
@@ -358,10 +383,15 @@ footer svg:hover{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        -webkit-display: flex;
+        -webkit-flex-direction: row;
+        -webkit-justify-content: space-between;
     }
     .btn{
         width: 45%;
         font-size: 18px;
+        -webkit-width: 45%;
+        -webkit-font-size: 18px;
     }
 
 
@@ -437,10 +467,15 @@ footer svg:hover{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        -webkit-display: flex;
+        -webkit-flex-direction: row;
+        -webkit-justify-content: space-between;
     }
     .btn{
         width: 45%;
         font-size: 18px;
+        -webkit-width: 45%;
+        -webkit-font-size: 18px;
     }
 
 
